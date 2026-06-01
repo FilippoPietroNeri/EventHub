@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://psychic-zebra-6qxr94j77j62596g-5000.app.github.dev",
+    "secure": false
+  }
+}
