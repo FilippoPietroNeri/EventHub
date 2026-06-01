@@ -27,9 +27,29 @@ function passwordMatch(group: AbstractControl): ValidationErrors | null {
   ],
   template: `
     <section class="auth-shell">
+      <aside class="showcase glass-panel">
+        <span class="eyebrow">Create account</span>
+        <h2>Perché EventHub</h2>
+        <p class="muted">Discovery veloce, biglietti digitali e strumenti organizer in un’unica esperienza.</p>
+        <div class="feature-grid">
+          <article>
+            <strong>Discovery veloce</strong>
+            <span>Cerca eventi per città, categoria e budget in tempo reale.</span>
+          </article>
+          <article>
+            <strong>Biglietti digitali</strong>
+            <span>QR ticket pronti nell’area personale.</span>
+          </article>
+          <article>
+            <strong>Organizer toolkit</strong>
+            <span>Dashboard, gestione eventi ed export partecipanti.</span>
+          </article>
+        </div>
+      </aside>
+
       <mat-card class="auth-card glass-panel">
         <mat-card-title>Crea il tuo account</mat-card-title>
-        <p>
+        <p class="muted">
           Registrazione tramite Supabase Auth. Il profilo EventHub viene sincronizzato
           automaticamente al primo accesso.
         </p>
@@ -44,54 +64,44 @@ function passwordMatch(group: AbstractControl): ValidationErrors | null {
         </form>
         <p class="mt"><a routerLink="/auth/login">Hai già un account?</a></p>
       </mat-card>
-
-      <aside class="showcase glass-panel">
-        <h2>Perché EventHub</h2>
-        <div class="feature">
-          <strong>Discovery veloce</strong>
-          <span>Cerca eventi per città, categoria e budget in tempo reale.</span>
-        </div>
-        <div class="feature">
-          <strong>Biglietti digitali</strong>
-          <span>QR ticket pronti nell’area personale.</span>
-        </div>
-        <div class="feature">
-          <strong>Organizer toolkit</strong>
-          <span>Dashboard, gestione eventi ed export partecipanti.</span>
-        </div>
-      </aside>
     </section>
   `,
   styles: `
     .auth-shell {
       display: grid;
-      grid-template-columns: 1fr 0.95fr;
+      grid-template-columns: 0.95fr 1.05fr;
       gap: 1rem;
       align-items: stretch;
       margin-top: 0.6rem;
     }
     .auth-card {
-      padding: 1rem;
+      padding: 1.15rem;
     }
     .showcase {
       padding: 1.25rem;
-    }
-    .showcase h2 {
-      margin-top: 0;
-    }
-    .feature {
       display: flex;
       flex-direction: column;
-      gap: 0.15rem;
-      padding: 0.75rem;
-      border-radius: 0.75rem;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid #e2e8f0;
-      margin-bottom: 0.6rem;
+      gap: 0.8rem;
     }
-    .feature span {
+    .showcase h2 {
+      margin: 0;
+    }
+    .feature-grid {
+      display: grid;
+      gap: 0.7rem;
+    }
+    .feature-grid article {
+      display: flex;
+      flex-direction: column;
+      gap: 0.16rem;
+      padding: 0.9rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+    }
+    .feature-grid span {
       font-size: 0.92rem;
-      color: #475569;
+      color: var(--muted);
     }
     .full { width: 100%; }
     form { display: flex; flex-direction: column; gap: 0.5rem; }

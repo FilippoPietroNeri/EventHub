@@ -85,14 +85,14 @@ import { Event as HubEvent } from '../../core/models';
       margin-bottom: 1rem;
     }
     .hero h1 { margin: 0 0 0.2rem; }
-    .hero p { margin: 0; color: #475569; }
+    .hero p { margin: 0; color: var(--muted); }
     .layout {
       display: grid;
       grid-template-columns: 1.25fr 1fr;
       gap: 1rem;
     }
     mat-card {
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 1rem;
       padding: 0.6rem;
     }
@@ -115,7 +115,7 @@ import { Event as HubEvent } from '../../core/models';
       align-items: center;
       padding: 0.8rem 0.9rem;
       margin-bottom: 0.5rem;
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 0.9rem;
     }
     .item div {
@@ -124,7 +124,7 @@ import { Event as HubEvent } from '../../core/models';
       gap: 0.15rem;
     }
     .item small {
-      color: #64748b;
+      color: var(--muted);
     }
     .item.empty {
       justify-content: center;

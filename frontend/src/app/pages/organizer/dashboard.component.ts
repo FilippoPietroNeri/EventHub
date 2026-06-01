@@ -64,7 +64,7 @@ import { OrganizerService } from '../../core/organizer.service';
       margin-bottom: 1rem;
     }
     .hero h1 { margin: 0 0 0.2rem; }
-    .hero p { margin: 0; color: #475569; }
+    .hero p { margin: 0; color: var(--muted); }
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -74,11 +74,11 @@ import { OrganizerService } from '../../core/organizer.service';
     .stats mat-card {
       text-align: center;
       padding: 1rem;
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 0.9rem;
     }
     .stats strong { display: block; font-size: 1.4rem; }
-    .stats span { color: #64748b; font-size: 0.86rem; }
+    .stats span { color: var(--muted); font-size: 0.86rem; }
     .toolbar {
       display: flex;
       gap: 0.5rem;
@@ -87,7 +87,7 @@ import { OrganizerService } from '../../core/organizer.service';
     }
     .table-wrap {
       border-radius: 1rem;
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.22);
       overflow: auto;
       padding: 0.35rem;
     }

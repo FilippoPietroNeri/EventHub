@@ -57,7 +57,7 @@ import { Ticket } from '../../core/models';
     }
     .hero p {
       margin: 0;
-      color: #475569;
+      color: var(--muted);
     }
     .tickets-grid {
       display: grid;
@@ -66,7 +66,7 @@ import { Ticket } from '../../core/models';
     }
     .ticket {
       border-radius: 1rem;
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.22);
       padding: 0.35rem;
     }
     header h2 {
@@ -79,14 +79,14 @@ import { Ticket } from '../../core/models';
       font-size: 0.92rem;
     }
     header small {
-      color: #64748b;
+      color: var(--muted);
     }
     .qr-wrap {
       margin: 1rem 0 0.75rem;
       display: flex;
       justify-content: center;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background: rgba(248, 250, 252, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 0.85rem;
       padding: 0.8rem;
     }
@@ -106,7 +106,7 @@ import { Ticket } from '../../core/models';
     .label {
       display: block;
       font-size: 0.78rem;
-      color: #64748b;
+      color: var(--muted);
     }
     .empty {
       padding: 1.5rem;

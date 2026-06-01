@@ -22,18 +22,28 @@ import { AuthService } from '../../core/auth.service';
   template: `
     <section class="auth-shell">
       <aside class="showcase glass-panel">
+        <span class="eyebrow">Welcome back</span>
         <h1>Torna su EventHub</h1>
-        <p>Accedi per gestire biglietti, iscrizioni e i tuoi eventi preferiti.</p>
-        <ul>
-          <li>Biglietti sempre disponibili con QR</li>
-          <li>Checkout Stripe in test mode</li>
-          <li>Dashboard organizer per metriche e export CSV</li>
-        </ul>
+        <p>Accedi per gestire biglietti, iscrizioni e i tuoi eventi preferiti in una dashboard più pulita.</p>
+        <div class="feature-list">
+          <article>
+            <strong>QR wallet</strong>
+            <span>Biglietti sempre disponibili nell’area personale.</span>
+          </article>
+          <article>
+            <strong>Stripe checkout</strong>
+            <span>Acquisti rapidi e conferme immediate.</span>
+          </article>
+          <article>
+            <strong>Organizer tools</strong>
+            <span>Metriche, export e gestione eventi con meno click.</span>
+          </article>
+        </div>
       </aside>
 
       <mat-card class="auth-card glass-panel">
         <mat-card-title>Accedi</mat-card-title>
-        <p>Autenticazione con <strong>Supabase Auth</strong>.</p>
+        <p class="muted">Autenticazione con <strong>Supabase Auth</strong>.</p>
         <form [formGroup]="form" (ngSubmit)="submit()">
           <mat-form-field class="full">
             <mat-label>Email</mat-label>
@@ -54,31 +64,46 @@ import { AuthService } from '../../core/auth.service';
   styles: `
     .auth-shell {
       display: grid;
-      grid-template-columns: 1.15fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 1rem;
       align-items: stretch;
       margin-top: 0.6rem;
     }
     .showcase {
-      padding: 1.35rem;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
     }
     .showcase h1 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin: 0.3rem 0 0;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      max-width: 12ch;
     }
     .showcase p {
       margin-top: 0;
-      color: #475569;
+      color: var(--muted);
     }
-    .showcase ul {
-      margin: 1rem 0 0;
-      padding-left: 1.2rem;
-      color: #334155;
-      line-height: 1.5;
+    .feature-list {
+      display: grid;
+      gap: 0.7rem;
+    }
+    .feature-list article {
+      padding: 0.85rem 0.9rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .feature-list span {
+      color: var(--muted);
+      font-size: 0.92rem;
     }
     .auth-card {
-      padding: 1rem;
+      padding: 1.15rem;
     }
     .full { width: 100%; }
     form { display: flex; flex-direction: column; gap: 0.5rem; }

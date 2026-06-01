@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from flask import Blueprint, jsonify, request
 from marshmallow import ValidationError
 
@@ -139,8 +137,6 @@ def delete_event(user, event_id):
 
 def _parse_event_form(partial=False):
     payload = request.form.to_dict()
-    if "start_at" in payload:
-        payload["start_at"] = datetime.fromisoformat(payload["start_at"].replace("Z", ""))
     if "price" in payload:
         payload["price"] = payload["price"]
     if "capacity" in payload:

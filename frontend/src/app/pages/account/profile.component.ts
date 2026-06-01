@@ -66,7 +66,7 @@ import { AuthService } from '../../core/auth.service';
       margin-bottom: 1rem;
     }
     .hero h1 { margin: 0 0 0.25rem; }
-    .hero p { margin: 0; color: #475569; }
+    .hero p { margin: 0; color: var(--muted); }
     .layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -76,7 +76,7 @@ import { AuthService } from '../../core/auth.service';
     mat-card {
       padding: 0.8rem;
       border-radius: 1rem;
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.22);
     }
     h2 {
       margin: 0.2rem 0 0.4rem;
@@ -84,7 +84,7 @@ import { AuthService } from '../../core/auth.service';
       font-size: 1.1rem;
     }
     form { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.5rem 1rem 1rem; }
-    .hint { font-size: 0.9rem; color: #64748b; padding: 0 1rem; margin: 0; }
+    .hint { font-size: 0.9rem; color: var(--muted); padding: 0 1rem; margin: 0; }
     @media (max-width: 900px) {
       .layout { grid-template-columns: 1fr; }
     }

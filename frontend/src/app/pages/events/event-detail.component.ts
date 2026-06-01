@@ -38,6 +38,7 @@ import { Event, Review } from '../../core/models';
         </div>
 
         <div class="details">
+          <span class="eyebrow">{{ event.category }}</span>
           <h1>{{ event.title }}</h1>
           <p class="location">{{ event.city }} — {{ event.venue }}</p>
           <p class="description">{{ event.description }}</p>
@@ -123,9 +124,8 @@ import { Event, Review } from '../../core/models';
   `,
   styles: `
     .hero-card {
-      padding: 0.5rem;
-      border-radius: 1rem;
-      border: 1px solid #e2e8f0;
+      padding: 0.55rem;
+      border-radius: 1.35rem;
       display: grid;
       grid-template-columns: minmax(280px, 460px) 1fr;
       gap: 1rem;
@@ -135,7 +135,7 @@ import { Event, Review } from '../../core/models';
       border-radius: 0.85rem;
       overflow: hidden;
       min-height: 220px;
-      background: #e2e8f0;
+      background: linear-gradient(140deg, rgba(15, 118, 110, 0.12), rgba(14, 165, 233, 0.12));
     }
     img {
       width: 100%;
@@ -148,9 +148,9 @@ import { Event, Review } from '../../core/models';
       min-height: 220px;
       display: grid;
       place-items: center;
-      color: #3730a3;
+      color: #0f766e;
       font-weight: 700;
-      background: linear-gradient(140deg, #e0e7ff, #cffafe);
+      background: linear-gradient(140deg, rgba(15, 118, 110, 0.12), rgba(37, 99, 235, 0.12));
     }
     .details {
       padding: 0.55rem 0.4rem 0.55rem 0;
@@ -164,7 +164,7 @@ import { Event, Review } from '../../core/models';
     }
     .location {
       margin: 0;
-      color: #475569;
+      color: var(--muted);
     }
     .description {
       margin: 0;
@@ -177,7 +177,7 @@ import { Event, Review } from '../../core/models';
       gap: 0.6rem;
     }
     .meta-grid article {
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 0.75rem;
       padding: 0.6rem 0.7rem;
       background: rgba(255, 255, 255, 0.8);
@@ -185,7 +185,7 @@ import { Event, Review } from '../../core/models';
     .meta-grid span {
       display: block;
       font-size: 0.75rem;
-      color: #64748b;
+      color: var(--muted);
       margin-bottom: 0.2rem;
     }
     .actions {
@@ -195,7 +195,7 @@ import { Event, Review } from '../../core/models';
       gap: 0.6rem;
     }
     .actions small {
-      color: #64748b;
+      color: var(--muted);
     }
     .reviews { margin-top: 1.4rem; }
     .reviews-head {
@@ -208,12 +208,12 @@ import { Event, Review } from '../../core/models';
       margin: 0;
     }
     .reviews-head span {
-      color: #64748b;
+      color: var(--muted);
       font-size: 0.9rem;
     }
     .review {
       margin-bottom: 0.75rem;
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 0.85rem;
     }
     .review header {
@@ -228,7 +228,7 @@ import { Event, Review } from '../../core/models';
     }
     .review.empty p {
       margin: 0;
-      color: #64748b;
+      color: var(--muted);
     }
     .review-form {
       padding: 0.65rem;

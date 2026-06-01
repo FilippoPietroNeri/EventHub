@@ -1,27 +1,161 @@
 @use '@angular/material' as mat;
 
+:root {
+  --bg: #f4f7fb;
+  --bg-strong: #ecf3ff;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --surface-border: rgba(148, 163, 184, 0.26);
+  --text: #0f172a;
+  --muted: #475569;
+  --brand: #0f766e;
+  --brand-strong: #155e75;
+  --brand-accent: #f97316;
+  --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.14);
+  --shadow-md: 0 14px 30px rgba(15, 23, 42, 0.1);
+  --font-sans: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+}
+
 html, body {
   height: 100%;
   margin: 0;
-  font-family: Inter, Roboto, 'Helvetica Neue', sans-serif;
+  font-family: var(--font-sans);
   background:
-    radial-gradient(circle at 0% 0%, #e0e7ff 0%, transparent 40%),
-    radial-gradient(circle at 100% 20%, #cffafe 0%, transparent 30%),
-    #f8fafc;
-  color: #0f172a;
+    radial-gradient(circle at 12% 18%, rgba(15, 118, 110, 0.14) 0, transparent 24%),
+    radial-gradient(circle at 88% 8%, rgba(249, 115, 22, 0.14) 0, transparent 22%),
+    radial-gradient(circle at 82% 74%, rgba(14, 165, 233, 0.1) 0, transparent 24%),
+    linear-gradient(180deg, #f8fbff 0%, var(--bg) 52%, #edf3fb 100%);
+  color: var(--text);
+  scroll-behavior: smooth;
 }
 
 * {
   box-sizing: border-box;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black 42%, transparent 100%);
+  opacity: 0.35;
+}
+
 a {
-  color: #4f46e5;
+  color: var(--brand-strong);
   text-decoration: none;
 }
 
 h1, h2, h3 {
   letter-spacing: -0.02em;
+  font-family: var(--font-display);
+}
+
+p {
+  line-height: 1.6;
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.18);
+}
+
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-button {
+  border-radius: 999px !important;
+}
+
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-unelevated-button.mat-primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-strong)) !important;
+  color: white !important;
+}
+
+.mat-mdc-stroked-button {
+  border-color: rgba(15, 118, 110, 0.18) !important;
+}
+
+.mat-mdc-card,
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 1.35rem;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(18px) saturate(125%);
+}
+
+.glass-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 40%);
+  pointer-events: none;
+}
+
+.mat-mdc-card {
+  box-shadow: var(--shadow-md) !important;
+}
+
+.mat-mdc-form-field {
+  --mdc-filled-text-field-container-color: rgba(255, 255, 255, 0.82);
+  --mdc-outlined-text-field-outline-color: rgba(148, 163, 184, 0.38);
+}
+
+.mat-mdc-form-field .mdc-text-field--filled,
+.mat-mdc-form-field .mdc-text-field--outlined {
+  border-radius: 16px !important;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.page-heading {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.02;
+  margin: 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-strong);
+  background: rgba(15, 118, 110, 0.1);
+}
+
+.section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-title h2,
+.section-title h3 {
+  margin: 0;
+}
+
+.section-title p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .glass-panel {

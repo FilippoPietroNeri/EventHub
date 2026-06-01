@@ -21,9 +21,22 @@ import { EventCardComponent } from '../../shared/event-card/event-card.component
     EventCardComponent,
   ],
   template: `
-    <section class="header">
-      <h1>Trova il tuo prossimo evento</h1>
-      <p>Filtra in tempo reale per città, categoria, data e budget.</p>
+    <section class="header glass-panel">
+      <div>
+        <span class="eyebrow">Discovery feed</span>
+        <h1 class="page-heading">Trova il tuo prossimo evento</h1>
+        <p class="muted">Filtra in tempo reale per città, categoria, data e budget.</p>
+      </div>
+      <div class="header-stats">
+        <article>
+          <strong>{{ events.length }}</strong>
+          <span>risultati</span>
+        </article>
+        <article>
+          <strong>{{ categories.length }}</strong>
+          <span>categorie</span>
+        </article>
+      </div>
     </section>
 
     <section class="filters-wrap glass-panel">
@@ -68,7 +81,12 @@ import { EventCardComponent } from '../../shared/event-card/event-card.component
       </div>
     </section>
 
-    <p class="results">{{ events.length }} eventi trovati</p>
+    <div class="section-title">
+      <div>
+        <h2>{{ events.length }} eventi trovati</h2>
+        <p>Mostrati in un layout più chiaro e leggibile.</p>
+      </div>
+    </div>
 
     <div class="grid">
       @for (e of events; track e.id) {
@@ -81,16 +99,21 @@ import { EventCardComponent } from '../../shared/event-card/event-card.component
   styles: `
     .header {
       margin-bottom: 1rem;
+      padding: 1.2rem 1.25rem;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
     }
     .header h1 {
-      margin-bottom: 0.3rem;
+      margin: 0.35rem 0 0.3rem;
+      max-width: 12ch;
     }
     .header p {
       margin: 0;
-      color: #475569;
     }
     .filters-wrap {
-      padding: 1rem;
+      padding: 1rem 1rem 0.85rem;
       margin-bottom: 1rem;
     }
     .filters {
@@ -108,15 +131,41 @@ import { EventCardComponent } from '../../shared/event-card/event-card.component
     .quick-actions .spacer {
       flex: 1;
     }
-    .results {
-      font-size: 0.9rem;
-      color: #64748b;
-      margin-bottom: 0.8rem;
+    .header-stats {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .header-stats article {
+      min-width: 110px;
+      padding: 0.8rem 0.9rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .header-stats strong {
+      font-size: 1.2rem;
+    }
+    .header-stats span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.25rem;
+    }
+    @media (max-width: 900px) {
+      .header {
+        flex-direction: column;
+        align-items: start;
+      }
     }
   `,
 })
